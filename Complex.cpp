@@ -77,3 +77,15 @@ Complex operator* (double l, Complex z1){
     Complex z(z1.getRe()*l, z1.getIm()*l);
     return  z;
 }
+Complex & operator+= (Complex &z1,  Complex & z2){
+    Complex z (z1.getRe()+z2.getRe(), z1.getIm()+z2.getIm());
+    return  z;
+}
+Complex & operator+= (Complex &z1, double r){
+    Complex z(z1.getRe()+r, z1.getIm());
+    return  z;
+}
+Complex & operator+= (double r, Complex &z1){
+    Complex z(z1.getRe()+r, z1.getIm());
+    return  z;
+}
