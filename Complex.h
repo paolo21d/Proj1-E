@@ -11,6 +11,8 @@ private:
     double  re, im;
 public:
     Complex(double r, double i);
+    //Complex(Complex z);
+    Complex(double r);
     Complex();
     ~Complex();
     double getRe();

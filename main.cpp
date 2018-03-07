@@ -4,6 +4,7 @@ using  namespace std;
 int main() {
     cout<<"Podaj re oraz im"<<endl;
     double re, im;
+
     cin>>re>>im;
     Complex zesp1(re, im);
     cout<<"Modul: "<<zesp1.modul()<<endl;

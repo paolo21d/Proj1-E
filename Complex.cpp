@@ -71,7 +71,7 @@ Complex operator* (Complex z1, Complex z2){
 }
 Complex operator* (Complex z1, double l){
     Complex z(z1.getRe()*l, z1.getIm()*l);
-    return  z;
+    return z;
 }
 Complex operator* (double l, Complex z1){
     Complex z(z1.getRe()*l, z1.getIm()*l);
