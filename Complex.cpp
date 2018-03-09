@@ -12,9 +12,6 @@ Complex::Complex(double r, double i){
     re=r;
     im=i;
 }
-Complex::Complex(){
-    cout<<"Konstruktor domyslny"<<endl;
-}
 Complex::~Complex() {
     cout<<"Destruktor"<<endl;
 }
