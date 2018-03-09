@@ -14,6 +14,7 @@ public:
     Complex ();
     Complex(double r, double i);
     Complex(Complex &);
+    Complex(double r);
     ~Complex();
     double getRe() const;
     double getIm() const;
