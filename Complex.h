@@ -5,19 +5,24 @@
 #ifndef PROJEKT1_COMPLEX_H
 #define PROJEKT1_COMPLEX_H
 
+#include <iostream>
 
 class Complex {
 private:
     double  re, im;
 public:
+    Complex ();
     Complex(double r, double i);
     Complex(Complex &);
     ~Complex();
-    double getRe();
-    double getIm();
+    double getRe() const;
+    double getIm() const;
     void ustaw(double r, double i);
     double modul();
     double argument();
+
+    friend std::ostream & operator<< (std::ostream &wyjscie, const Complex &z);
+    friend Complex operator+ (const Complex &z1, const Complex &z2);
 };
 
 
