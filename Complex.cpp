@@ -29,7 +29,7 @@ Complex::Complex(const Complex &com) {
 }
 
 Complex::~Complex() {
-    cout << "Destruktor" << endl;
+    cout << "Destruktor " << this << endl;
 }
 
 /////////Metody
@@ -66,49 +66,19 @@ Complex operator+(const Complex &z1, const Complex &z2) {
     return Complex(z1.re + z2.re, z1.im + z2.im);
 }
 
-Complex operator+(Complex &z1, double &r) {
-    Complex z(z1.getRe() + r, z1.getIm());
-    return z;
+Complex operator-(const Complex &z1, const Complex &z2) {
+    return Complex(z1.re - z2.re, z1.im - z2.im);
 }
 
-Complex operator+(double &r, Complex &z1) {
-    Complex z(z1.getRe() + r, z1.getIm());
-    return z;
+Complex operator*(const Complex &z1, const Complex &z2) {
+    double r = z1.re * z2.re - z1.im * z2.im;
+    double i = z1.re * z2.im + z1.im * z2.re;
+    //double r = z1.getRe() * z2.getRe() - z1.getIm() * z2.getIm();
+    //double i = z1.getRe() * z2.getIm() + z1.getIm() * z2.getRe();
+    return Complex(r, i);
 }
 
-Complex operator-(Complex z1, Complex z2) {
-    Complex z(z1.getRe() - z2.getRe(), z1.getIm() - z2.getIm());
-    return z;
-}
-
-Complex operator-(Complex z1, double r) {
-    Complex z(z1.getRe() - r, z1.getIm());
-    return z;
-}
-
-Complex operator-(double r, Complex z1) {
-    Complex z(r - z1.getRe(), z1.getIm());
-    return z;
-}
-
-Complex operator*(Complex z1, Complex z2) {
-    double r = z1.getRe() * z2.getRe() - z1.getIm() * z2.getIm();
-    double i = z1.getRe() * z2.getIm() + z1.getIm() * z2.getRe();
-    Complex z(r, i);
-    return z;
-}
-
-Complex operator*(Complex z1, double l) {
-    Complex z(z1.getRe() * l, z1.getIm() * l);
-    return z;
-}
-
-Complex operator*(double l, Complex z1) {
-    Complex z(z1.getRe() * l, z1.getIm() * l);
-    return z;
-}
-
-Complex &operator+=(Complex &z1, Complex &z2) {
+/*Complex &operator+=(Complex &z1, Complex &z2) {
     Complex z(z1.getRe() + z2.getRe(), z1.getIm() + z2.getIm());
     return z;
 }
@@ -121,6 +91,24 @@ Complex &operator+=(Complex &z1, double r) {
 Complex &operator+=(double r, Complex &z1) {
     Complex z(z1.getRe() + r, z1.getIm());
     return z;
+}*/
+
+Complex &Complex::operator+=(const Complex &z) {
+    this->re += z.re;
+    this->im += z.im;
+    return *this;
+}
+
+Complex &Complex::operator-=(const Complex &z) {
+    this->re -= z.re;
+    this->im -= z.im;
+    return *this;
+}
+
+Complex &Complex::operator*=(const Complex &z) {
+    this->re = this->re * z.re - this->im * z.im;
+    this->im = this->re * z.im + this->im * z.re;
+    return *this;
 }
 
 ostream &operator<<(ostream &wyjscie, const Complex &z) {
