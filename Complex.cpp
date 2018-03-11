@@ -29,7 +29,7 @@ Complex::Complex(const Complex &com) {
 }
 
 Complex::~Complex() {
-    cout << "Destruktor " << this << endl;
+    //cout << "Destruktor " << this << endl;
 }
 
 /////////Metody
@@ -113,9 +113,9 @@ Complex &Complex::operator*=(const Complex &z) {
 
 ostream &operator<<(ostream &wyjscie, const Complex &z) {
     if (z.getIm() > 0)
-        return wyjscie << z.getRe() << "+" << z.getIm() << "i ";
+        return wyjscie << z.getRe() << "+" << z.getIm() << "i";
     else if (z.getIm() < 0)
-        return wyjscie << z.getRe() << "" << z.getIm() << "i ";
+        return wyjscie << z.getRe() << "" << z.getIm() << "i";
     else
-        return wyjscie << z.getRe() << " ";
+        return wyjscie << z.getRe();
 }

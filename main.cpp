@@ -25,43 +25,81 @@ int main() {
         cout << "5 Oblicz argument liczby" << endl;
         cout << "0 Wyjscie z programu" << endl;
         cout << "Liczby wprowadzamy w postaci: czesc_rzeczywista czesc_urojona" << endl;
-        cin >> opcja;
+        //cin >> opcja;
+        while (scanf("%d", &opcja) != 1) {
+            while (getchar() != '\n');
+            cout << endl << "Blad! Podaj odpowiedni numer ";
+        }
         if (opcja == 1) {
             cout << "Podaj liczbe z1 ";
-            cin >> re >> im;
+            //cin >> re >> im;
+            while (scanf("%lf%lf", &re, &im) != 2) {
+                while (getchar() != '\n');
+                cout << endl << "Blad! Podaj liczbe z1 ";
+            }
             Complex z1(re, im);
             cout << "Podaj liczbe z2 ";
-            cin >> re >> im;
+            //cin >> re >> im;
+            while (scanf("%lf%lf", &re, &im) != 2) {
+                while (getchar() != '\n');
+                cout << endl << "Blad! Podaj liczbe z2 ";
+            }
             Complex z2(re, im);
-            cout << endl << "Wynik " << z1 << " + " << z2 << " = " << z1 + z2 << endl;
+            cout << "Wynik " << z1 << " + " << z2 << " = " << z1 + z2 << endl;
         } else if (opcja == 2) {
             cout << "Podaj liczbe z1 ";
-            cin >> re >> im;
+            //cin >> re >> im;
+            while (scanf("%lf%lf", &re, &im) != 2) {
+                while (getchar() != '\n');
+                cout << endl << "Blad! Podaj liczbe z1 ";
+            }
             Complex z1(re, im);
             cout << "Podaj liczbe z2 ";
-            cin >> re >> im;
+            //cin >> re >> im;
+            while (scanf("%lf%lf", &re, &im) != 2) {
+                while (getchar() != '\n');
+                cout << endl << "Blad! Podaj liczbe z2 ";
+            }
             Complex z2(re, im);
-            cout << endl << "Wynik " << z1 << " - (" << z2 << ") = " << z1 - z2 << endl;
+            cout << "Wynik " << z1 << " - (" << z2 << ") = " << z1 - z2 << endl;
         } else if (opcja == 3) {
             cout << "Podaj liczbe z1 ";
-            cin >> re >> im;
+            //cin >> re >> im;
+            while (scanf("%lf%lf", &re, &im) != 2) {
+                while (getchar() != '\n');
+                cout << endl << "Blad! Podaj liczbe z1 ";
+            }
             Complex z1(re, im);
             cout << "Podaj liczbe z2 ";
-            cin >> re >> im;
+            //cin >> re >> im;
+            while (scanf("%lf%lf", &re, &im) != 2) {
+                while (getchar() != '\n');
+                cout << endl << "Blad! Podaj liczbe z2 ";
+            }
             Complex z2(re, im);
-            cout << endl << "Wynik " << z1 << " * (" << z2 << ") = " << z1 * z2 << endl;
+            cout << "Wynik " << z1 << " * (" << z2 << ") = " << z1 * z2 << endl;
         } else if (opcja == 4) {
             cout << "Podaj liczbe z ";
-            cin >> re >> im;
+            //cin >> re >> im;
+            while (scanf("%lf%lf", &re, &im) != 2) {
+                while (getchar() != '\n');
+                cout << endl << "Blad! Podaj liczbe z ";
+            }
             Complex z(re, im);
             cout << "|" << z << "| = " << z.modul() << endl;
         } else if (opcja == 5) {
             cout << "Podaj liczbe z ";
-            cin >> re >> im;
+            //cin >> re >> im;
+            while (scanf("%lf%lf", &re, &im) != 2) {
+                while (getchar() != '\n');
+                cout << endl << "Blad! Podaj liczbe z ";
+            }
             Complex z(re, im);
             cout << "arg(" << z << ") = " << z.argument() << endl;
-        } else {
+        } else if (opcja == 0) {
             break;
+        } else {
+            cout << "Bladna opcja!" << endl;
         }
     }
     return 0;
